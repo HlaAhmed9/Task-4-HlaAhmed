@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Digital Bookshelf</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="main-header" id="home">
+      <div class="logo-container">
+        <h1>MyReads</h1>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#bookshelf">Bookshelf</a></li>
+          <li><a href="#stats">Stats</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle-btn">
+        <i class="fa-solid fa-moon" id="theme-icon"></i>
+        <span id="theme-text">Dark Mode</span>
+      </button>
+    </header>
+
+    <main class="content-wrapper">
+      <section class="hero-container">
+        <div class="hero-content">
+          <h2>Portal into New Worlds</h2>
+          <p>Tracking my journey through literature, one chapter at a time.</p>
+          <a href="#bookshelf" class="cta-button">Explore Bookshelf</a>
+        </div>
+      </section>
+
+      <div class="layout-container" id="bookshelf">
+        <section class="form-container">
+          <h3><i class="fa-solid fa-square-plus"></i> Add a New Book</h3>
+
+          <form id="add-book-form" novalidate>
+            <div class="input-group" id="title-group">
+              <label for="book-title">Book Title</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-book input-icon"></i>
+                <input
+                  type="text"
+                  id="book-title"
+                  placeholder="e.g., Outlander"
+                />
+              </div>
+              <span class="error-message"
+                ><i class="fa-solid fa-circle-exclamation"></i> Title cannot be
+                left blank.</span
+              >
+            </div>
+
+            <div class="input-group" id="author-group">
+              <label for="book-author">Author Name</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-user-pen input-icon"></i>
+                <input
+                  type="text"
+                  id="book-author"
+                  placeholder="e.g., Diana Gabaldon"
+                />
+              </div>
+              <span class="error-message"
+                ><i class="fa-solid fa-circle-exclamation"></i> Author name
+                cannot be left blank.</span
+              >
+            </div>
+
+            <div class="input-group" id="synopsis-group">
+              <label for="book-synopsis">Synopsis / Summary</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-align-left input-icon"></i>
+                <textarea
+                  id="book-synopsis"
+                  placeholder="Write a short summary of the book plot..."
+                ></textarea>
+              </div>
+              <span class="error-message"
+                ><i class="fa-solid fa-circle-exclamation"></i> Synopsis must be
+                at least 15 characters long.</span
+              >
+            </div>
+
+            <div class="input-group" id="genre-group">
+              <label for="book-genre">Primary Genre</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-bookmark input-icon"></i>
+                <select id="book-genre">
+                  <option value="">-- Select a Genre --</option>
+                  <option value="Fantasy">Fantasy</option>
+                  <option value="Science Fiction">Science Fiction</option>
+                  <option value="Historical Fiction">Historical Fiction</option>
+                  <option value="Romance">Romance</option>
+                </select>
+              </div>
+              <span class="error-message"
+                ><i class="fa-solid fa-circle-exclamation"></i> Please select a
+                primary genre classification.</span
+              >
+            </div>
+
+            <button type="submit" class="submit-form-btn">
+              <i class="fa-solid fa-cloud-arrow-up"></i> Add to Bookshelf
+            </button>
+
+            <div id="form-success-banner" class="success-banner">
+              <i class="fa-solid fa-circle-check"></i> Book successfully
+              cataloged and appended to grid!
+            </div>
+          </form>
+        </section>
+        <section class="books-grid">
+          <article class="book-card">
+            <img
+              src="Sources/Mistborn.avif"
+              alt="Mistborn Book Cover"
+              class="book-cover"
+            />
+            <div class="book-info">
+              <h3>Mistborn: The Final Empire</h3>
+              <p class="author">By Brandon Sanderson</p>
+              <p class="synopsis">
+                For a thousand years the ash fell and no flowers bloomed. For a
+                thousand years the Skaa slaved in misery and lived in fear. For
+                a thousand years the Lord Ruler, the "Sliver of Infinity,"
+                reigned with absolute power and ultimate terror, divinely
+                invincible. Then, when hope was so long lost that not even its
+                memory remained, a terribly scarred, heart-broken half-Skaa
+                rediscovered it in the depths of the Lord Ruler's most hellish
+                prison.
+              </p>
+              <span class="tag genre-tag">Fantasy</span>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <img
+              src="Sources/The-Lies-of-Locke-Lamora.avif"
+              alt="The Lies of Locke Lamora Book Cover"
+              class="book-cover"
+            />
+            <div class="book-info">
+              <h3>The Lies of Locke Lamora</h3>
+              <p class="author">By Scott Lynch</p>
+              <p class="synopsis">
+                An orphan’s life is harsh—and often short—in the mysterious
+                island city of Camorr. But young Locke Lamora dodges death and
+                slavery, becoming a thief under the tutelage of a gifted con
+                artist. As leader of the band of light-fingered brothers known
+                as the Gentleman Bastards, Locke is soon infamous, fooling even
+                the underworld’s most feared ruler.
+              </p>
+              <span class="tag genre-tag">Fantasy</span>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <img
+              src="Sources/Percy Jackson and the Olympians.avif"
+              alt="The Lightning Thief Book Cover"
+              class="book-cover"
+            />
+            <div class="book-info">
+              <h3>The Lightning Thief</h3>
+              <p class="author">By Rick Riordan</p>
+              <p class="synopsis">
+                Percy Jackson is a good kid, but he can't seem to focus on his
+                schoolwork or control his temper. And lately, being away at
+                boarding school is only getting worse - Percy could have sworn
+                his pre-algebra teacher turned into a monster and tried to kill
+                him. When Percy's mom finds out, she knows it's time that he
+                knew the truth about where he came from, and that he go to the
+                one place he'll be safe.
+              </p>
+              <span class="tag genre-tag">Fantasy</span>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <img
+              src="Sources/PHM.avif"
+              alt="Project Hail Mary Book Cover"
+              class="book-cover"
+            />
+            <div class="book-info">
+              <h3>Project Hail Mary</h3>
+              <p class="author">By Andy Weir</p>
+              <p class="synopsis">
+                Ryland Grace is the sole survivor on a desperate, last-chance
+                mission—and if he fails, humanity and the earth itself will
+                perish.
+              </p>
+              <span class="tag genre-tag">Science Fiction</span>
+            </div>
+          </article>
+        </section>
+
+        <aside class="stats-sidebar" id="stats">
+          <h3>2026 Reads</h3>
+          <div class="stat-block">
+            <p class="stat-number" id="goals-counter">0</p>
+            <p class="stat-label">Books Completed</p>
+          </div>
+          <div class="favorite-genres">
+            <h4>Top Genres</h4>
+            <ul>
+              <li>Fantasy</li>
+              <li>Science Fiction</li>
+              <li>Historical Fiction</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="main-footer" id="contact">
+      <div class="footer-content">
+        <div class="contact-info-block">
+          <h4>Contact Info</h4>
+          <p>Email: hlapersonallibrary@gmail.com</p>
+        </div>
+        <p class="copyright">&copy; 2026 Personal Bookshelf Project</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

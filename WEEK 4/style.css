@@ -1,0 +1,572 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #333333;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.main-header {
+    height: 80px;
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.logo-container h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2c3e50;
+    letter-spacing: -0.5px;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 32px;
+}
+
+.main-nav a {
+    font-size: 15px;
+    font-weight: 600;
+    color: #666666;
+    transition: color 0.2s ease;
+}
+
+.main-nav a:hover {
+    color: #2c3e50;
+}
+
+.theme-toggle-btn {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.main-footer {
+    height: 400px;
+    width: 100%;
+    background-color: #1a252f;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.footer-content {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    text-align: center;
+}
+
+.contact-info-block h4 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #3498db;
+}
+
+.copyright {
+    font-size: 14px;
+    color: #7f8c8d;
+    border-top: 1px solid #2c3e50;
+    padding-top: 20px;
+}
+
+/*  HERO BANNER  */
+.hero-container {
+    background: linear-gradient(135deg, #74b9ff, #a29bfe);
+    padding: 100px 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-container h2 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+}
+
+.hero-container p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #6c5ce7;
+    padding: 12px 32px;
+    font-weight: 600;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+.layout-container {
+    max-width: 1200px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 80px 20px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+}
+
+/*  BOOK CARD  */
+.books-grid {
+    grid-column: span 8;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(288px, 1fr));
+    column-gap: 24px;
+    row-gap: 40px;
+}
+
+.book-card {
+    height: auto; 
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eef2f5;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-4px);
+}
+
+.book-cover {
+    width: 100%;
+    height: 320px;
+    object-fit: contain; 
+    background-color: #eaeaea;
+}
+
+.book-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.book-info h3 {
+    font-size: 18px;
+    color: #2c3e50;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.book-info .author {
+    font-size: 14px;
+    color: #7f8c8d;
+    margin-bottom: 12px;
+    font-style: italic;
+}
+
+.book-info .synopsis {
+    font-size: 14px;
+    color: #555555;
+    margin-bottom: 15px;
+    height: 110px;
+    overflow-y: auto; 
+    padding-right: 5px;
+}
+
+
+.book-info .synopsis::-webkit-scrollbar {
+    width: 4px;
+}
+.book-info .synopsis::-webkit-scrollbar-thumb {
+    background-color: #cccccc;
+    border-radius: 4px;
+}
+
+.tag {
+    align-self: flex-start;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.genre-tag {
+    background-color: #e8f4fd;
+    color: #3498db;
+}
+
+
+.read-toggle-btn, .favorite-toggle-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 13px;
+    transition: all 0.2s ease;
+}
+
+/* SIDEBAR CONTROLS  */
+.stats-sidebar {
+    grid-column: span 4;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 30px;
+    height: fit-content;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eef2f5;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.stats-sidebar h3 {
+    font-size: 18px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f4f7f6;
+}
+
+.stat-block {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 6px;
+    text-align: center;
+    margin-bottom: 24px;
+    border-left: 4px solid #6c5ce7;
+    transition: background-color 0.3s ease;
+}
+
+.stat-number {
+    font-size: 36px;
+    font-weight: 700;
+    color: #6c5ce7;
+    line-height: 1.2;
+}
+
+.stat-label {
+    font-size: 13px;
+    color: #7f8c8d;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 4px;
+}
+
+.favorite-genres h4 {
+    font-size: 14px;
+    color: #2c3e50;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+.favorite-genres ul li {
+    font-size: 14px;
+    color: #555555;
+    padding: 8px 0;
+    border-bottom: 1px solid #f4f7f6;
+    display: flex;
+    align-items: center;
+}
+
+.favorite-genres ul li::before {
+    content: "•";
+    color: #a29bfe;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -0.2em;
+}
+
+/* DARK MODE */
+
+body.dark-theme {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-theme .main-header,
+body.dark-theme .book-card,
+body.dark-theme .stats-sidebar {
+    background-color: #1e1e1e;
+    border-color: #333333;
+}
+
+body.dark-theme .logo-container h1,
+body.dark-theme .book-info h3,
+body.dark-theme .stats-sidebar h3,
+body.dark-theme .favorite-genres h4,
+body.dark-theme .favorite-genres ul li {
+    color: #ffffff;
+}
+
+body.dark-theme .main-nav a {
+    color: #aaaaaa;
+}
+
+body.dark-theme .main-nav a:hover {
+    color: #a29bfe;
+}
+
+body.dark-theme .stat-block {
+    background-color: #252525;
+}
+
+body.dark-theme .book-info .synopsis {
+    color: #bbbbbb;
+}
+
+body.dark-theme .theme-toggle-btn {
+    background-color: #333333;
+    color: #ffffff;
+    border-color: #555555;
+}
+
+/*  RESPONSIVE */
+@media (max-width: 1024px) {
+    .layout-container {
+        grid-template-columns: 1fr;
+        padding: 40px 20px;
+    }
+    .books-grid {
+        grid-column: span 12;
+    }
+    .stats-sidebar {
+        grid-column: span 12;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 20px;
+        gap: 15px;
+    }
+    .main-nav ul {
+        gap: 20px;
+    }
+    .hero-container h2 {
+        font-size: 32px;
+    }
+    .books-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.form-container {
+    grid-column: span 12; /* Spans the entire grid width at the top of layout container */
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eef2f5;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.form-container h3 {
+    font-size: 20px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 8px;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 14px;
+    color: #95a5a6;
+    font-size: 15px;
+    pointer-events: none;
+}
+
+.input-wrapper input,
+.input-wrapper textarea,
+.input-wrapper select {
+    width: 100%;
+    padding: 12px 12px 12px 40px; /* Leaves room for the Font Awesome icon on the left */
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #ffffff;
+    color: #333333;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-wrapper textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* User Focus State Interaction micro-animations */
+.input-wrapper input:focus,
+.input-wrapper textarea:focus,
+.input-wrapper select:focus {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.15);
+}
+
+/* Programmatic Error Message Display State Hidden by Default */
+.error-message {
+    color: #e74c3c;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 6px;
+    display: none;
+    align-items: center;
+    gap: 6px;
+}
+
+/* --- VALIDATION RUNTIME MODES --- */
+.input-group.error-active .input-wrapper input,
+.input-group.error-active .input-wrapper textarea,
+.input-group.error-active .input-wrapper select {
+    border-color: #e74c3c;
+    background-color: #fffafb;
+}
+
+.input-group.error-active .error-message {
+    display: flex; /* Displays validation text instantly when field checks fail */
+}
+
+.input-group.success-active .input-wrapper input,
+.input-group.success-active .input-wrapper textarea,
+.input-group.success-active .input-wrapper select {
+    border-color: #2ecc71;
+    background-color: #fafffb;
+}
+
+.submit-form-btn {
+    background-color: #6c5ce7;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.submit-form-btn:hover {
+    background-color: #5b4bc4;
+    transform: translateY(-1px);
+}
+
+.success-banner {
+    margin-top: 15px;
+    background-color: #d4edda;
+    color: #155724;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    display: none;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #c3e6cb;
+}
+
+/* --- DARK MODE ALIGNMENTS FOR FORM --- */
+body.dark-theme .form-container {
+    background-color: #1e1e1e;
+    border-color: #333333;
+}
+body.dark-theme .form-container h3,
+body.dark-theme .input-group label {
+    color: #ffffff;
+}
+body.dark-theme .input-wrapper input,
+body.dark-theme .input-wrapper textarea,
+body.dark-theme .input-wrapper select {
+    background-color: #2b2b2b;
+    border-color: #444444;
+    color: #ffffff;
+}
+body.dark-theme .input-group.error-active .input-wrapper input,
+body.dark-theme .input-group.error-active .input-wrapper textarea {
+    background-color: #3a1e1e;
+}
+body.dark-theme .input-group.success-active .input-wrapper input,
+body.dark-theme .input-group.success-active .input-wrapper textarea {
+    background-color: #1e3a27;
+}
